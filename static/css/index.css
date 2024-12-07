@@ -1,0 +1,327 @@
+/* Déclaration des variables de couleur */
+:root {
+    --primary-color: #333;
+    --secondary-color: #444444;
+    --background-color: #f5f5f5;
+    --text-color: #777;
+    --menu-color: #cfcfcf;
+    scroll-behavior: smooth;
+}
+/* Styles généraux */
+body {
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease-in-out;
+}
+/* Header */
+header {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+/* Bannière */
+.banner {
+    /* background-image: url('../imgs/banner.jpg'); */
+    /* background dégradé du noir en haut vers du blanc */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.5));
+    background-size: cover;
+    height: 200px;
+    width: 100%;
+    position: relative;
+}
+/* Photo de profil */
+.profile {
+    background-image: url('../imgs/kiki.jpg');
+    background-size: cover;
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 3px solid white;
+}
+/* Menu de navigation */
+.vertical-menu {
+    background-color: var(--secondary-color);
+    width: 200px;
+    height: 100vh;
+    position: sticky;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+.vertical-menu.active {
+    transform: translateX(0);
+}
+.vertical-menu img.logo {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+.vertical-menu a {
+    display: block;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: var(--menu-color);
+}
+/* Bouton pour activer/désactiver le menu de navigation */
+.toggle-button {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    background-color: #ccc;
+    padding: 10px;
+    border-radius: 0 5px 5px 0;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+.toggle-button::before {
+    content: '\2190';
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+}
+.toggle-button.active {
+    transform: translateX(204px);
+    border-radius: 5px 0 0 5px;
+}
+.toggle-button.active::before {
+    content: '\2192';
+}
+/* Section "About" */
+.about {
+    background-color: var(--background-color);
+    padding: 20px;
+}
+.about h2 {
+    color: var(--primary-color);
+}
+.about p {
+    color: var(--text-color);
+}
+
+.cv-button {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 3px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.cv-button:hover {
+    background-color: #555;
+}
+/* Section "Projets" */
+.projects {
+    background-color: var(--background-color);
+    padding: 20px;
+}
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+.section-title {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+.project-card {
+    background-color: var(--background-color);
+    width: calc(33% - 20px);
+    min-width: 350px;
+    margin-bottom: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    text-align: center;
+}
+.project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.project-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+.project-card p {
+    color: var(--text-color);
+}
+.project-card button {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+.project-card button:hover {
+    background-color: #555;
+}
+/* Redimensionner le site lorsque le menu est déployé */
+.site-content {
+    width: 100%;
+    margin-left: 0;
+    transition: all 0.3s ease-in-out;
+}
+.site-content.active {
+    width: calc(100% - 233px);
+    margin-left: 233px;
+}
+
+
+
+.drawing {
+    /* background-color: var(--backgroound-colr); */
+    padding: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.drawing-button {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 3px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.drawing-button:hover {
+    background-color: #555;
+}
+
+
+/* Section "Contact" */
+.contact {
+    background-color: var(--background-color);
+    padding: 20px;
+}
+
+.contact h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.social-media {
+    margin-bottom: 20px;
+}
+
+.social-media h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.social-media ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-media ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-media ul li:last-child {
+    margin-right: 0;
+}
+
+.social-media ul li a {
+    color: var(--primary-color);
+    font-size: 24px;
+    transition: color 0.3s ease-in-out;
+}
+
+.social-media ul li a:hover {
+    color: #555;
+}
+
+
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 20px;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.footer-links li:last-child {
+    margin-right: 0;
+}
+
+.footer-links li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-links li a:hover {
+    color: #ccc;
+}
+
+/* responsive */
+@media (max-width: 767px) {
+    .vertical-menu {
+        transform: translateX(-100%);
+        display: none;
+    }
+    
+    .toggle-button.active {
+        display: none;
+        transform: translateX(0);
+    }
+
+    .site-content.active {
+        width: 100%;
+        margin-left: 0;
+    }
+}

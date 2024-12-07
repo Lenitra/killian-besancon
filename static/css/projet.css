@@ -1,0 +1,143 @@
+/* Réinitialisation des marges et des rembourrages pour la page */
+body,
+h1,
+h2,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style pour le corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    /* overflow-x: scroll; */
+    /* overflow-y: hidden; */
+}
+
+
+.header-content {
+    height: 60px;
+    /* background-color: #ffffff; */
+    max-width: 800px;
+    margin: auto auto;
+}
+
+/* Style pour le lien de retour */
+.header-content a {
+    position: absolute;
+font-size: 25px;
+margin-left: -40px;
+color: black;
+}
+
+/* Style pour le titre */
+h1 {
+    margin-top: 2px;
+    font-size: 25px;
+    text-wrap: nowrap;
+}
+
+/* Style pour le sous-titre */
+h3 {
+    margin-top: 0px;
+}
+
+/* Style pour la date */
+.date {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    font-style: italic;
+    font-weight: normal;
+    font-family: Arial, sans-serif;
+    text-align: right;
+    /* margin-right: 20px; */
+    margin-top: -40px;
+    /* margin-bottom: 10px; */
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Style pour le contenu principal */
+main {
+    max-width: 800px;
+    margin: auto auto;
+    background-color: #fff;
+    padding: 50px;
+    margin-top: 100px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+main * {
+    margin:0;
+}
+
+div.doubleimage{
+    display: flex;
+    /* justify-content: space-between; */
+    /* max-width: 800px; */
+    /* marge entre les deux images */
+    margin-bottom: 10px;
+    width: calc(50% - 10px);
+}
+
+/* marge entre les deux images */
+div.doubleimage img{
+    margin-right: 20px;
+}
+
+
+
+/* Style pour les images */
+img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+/* Style pour le texte explicatif */
+main p {
+    padding: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #e2e2e2;
+    margin-top: -10px;
+}
+
+.feat {
+    font-size: 10px;
+}

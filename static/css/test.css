@@ -1,0 +1,381 @@
+/* Reset des marges et des espacements par défaut */
+body,
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+/* FONTS */
+/* create a new font family */
+@font-face {
+    font-family: 'Titres';
+    src: url('../fonts/Octosquares.ttf');
+}
+
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border: 1px solid #ffffff00;
+    /* color: #acacac; */
+}
+
+
+/* Style du header */
+.main-header {
+    background: linear-gradient(rgba(0, 0, 0, .70), rgba(255, 255, 255, 1));
+    background-size: cover;
+    background-position: center;
+    height: 160px; /* Ajustez la hauteur de la bannière selon vos besoins */
+    text-align: center;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+/* Style de la photo de profil */
+.main-header::after {
+    content: "";
+    background-image: url('../imgs/kiki.jpg'); /* Remplacez le chemin par le chemin de votre photo de profil */
+    background-size: cover;
+    background-position: center;
+    width: 150px; /* Ajustez la taille de la photo de profil */
+    height: 150px; /* Ajustez la taille de la photo de profil */
+    border-radius: 50%; /* Pour obtenir une forme de cercle */
+    border: 2px solid #fff; /* Pour créer une bordure blanche autour de la photo de profil */
+    position: absolute;
+    bottom: -50px; /* Ajustez la valeur pour positionner la photo de profil à cheval sur la bannière */
+    /* margin-bottom: 50px; */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.main-header h1 {
+    color: #fff;
+    font-size: 36px;
+    padding-top: 5px;
+    font-family: 'Titres';
+}
+
+
+
+
+/* Style de la section "À Propos" */
+#about {
+    padding: 60px 0;
+    text-align: center;
+}
+
+/* Style du titre de la section */
+.section-title {
+    font-family: 'Titres';
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Style du texte de la section */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-content p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Style du bouton de téléchargement */
+.download-cv {
+    margin-top: 30px;
+}
+
+.btn-download {
+    display: inline-block;
+    background-color: #696969;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-download:hover {
+    background-color: #3b3b3b;
+}
+
+
+
+
+
+
+
+
+/* Style du conteneur du slider */
+.portfolio-slider {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Cacher tous les groupes de projets sauf le premier */
+.portfolio-group:not(:first-child) {
+    display: none;
+}
+
+/* Style des boutons de navigation */
+.portfolio-navigation {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.prev-button,
+.next-button {
+    background-color: #696969;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.prev-button:hover,
+.next-button:hover {
+    background-color: #3b3b3b;
+}
+
+
+/* Style de la section "Portfolio" */
+#portfolio, #plastiques {
+    padding: 60px 0;
+    text-align: center;
+    background-color: #f7f7f7;
+}
+
+/* Style du titre de la section */
+.section-title {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Style de la galerie de portfolio en utilisant Flexbox */
+.portfolio-group, .plastiques-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Style des éléments du portfolio avec des coins arrondis */
+.portfolio-item {
+    width: calc(33.33% - 40px);
+    /* Pour 3 éléments par ligne avec un espacement de 40px */
+    margin: 20px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    border-radius: 10px;
+    padding-bottom: 5px;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+}
+
+.portfolio-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+.portfolio-item h3 {
+    font-size: 20px;
+    margin: 10px 0;
+    color: #333;
+}
+
+/* Style du bouton "Voir Plus" */
+.btn-voir-plus {
+    display: inline-block;
+    background-color: #696969;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    /* display: none; */
+    /* Par défaut, le bouton est masqué */
+}
+
+/* Affichez le bouton "Voir Plus" lorsque vous survolez un élément de portfolio */
+.btn-voir-plus:hover {
+    background-color: #3b3b3b;
+}
+
+
+/* Media query pour afficher en une colonne à 800px de large ou moins */
+@media (max-width: 800px) {
+    .portfolio-item {
+        width: calc(50% - 40px);
+        /* Une colonne à pleine largeur avec un espacement de 40px */
+    }
+}
+@media (max-width: 500px) {
+    .portfolio-item {
+        width: calc(100% - 40px);
+        /* Une colonne à pleine largeur avec un espacement de 40px */
+    }
+}
+
+
+
+/* Style de la section "Dessins" */
+#dessins {
+    padding: 60px 0;
+    text-align: center;
+    background-color: #fff;
+}
+
+/* Style du titre de la section */
+#dessins .section-title {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Style du conteneur des dessins avec Flexbox */
+#dessins .dessins-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Style des éléments individuels de dessin */
+#dessins .dessin-item {
+    width: 200px;
+    /* Largeur fixe pour chaque élément */
+    height: 200px;
+    /* Hauteur fixe pour chaque élément */
+    margin: 20px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 50%;
+    /* Bordure ronde à 50% pour créer un cercle */
+    border: 2px solid #333;
+    /* Bordure solide autour de chaque élément */
+    overflow: hidden;
+    /* Masque du contenu qui dépasse */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Centrage vertical et horizontal */
+    cursor: pointer;
+    /* Curseur de type pointer pour indiquer que l'élément est cliquable */
+    transition: transform 0.2s ease-in-out;
+    /* Effet de transition sur le hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Ombre */
+}
+
+/* Style des icônes FontAwesome */
+#dessins .dessin-item i {
+    font-size: 48px;
+    /* Taille de l'icône */
+    color: var(--dessin-icon-color);
+    /* Utilisation de la variable de couleur définie précédemment */
+}
+
+/* Style des titres sous chaque icône */
+#dessins .dessin-item h3 {
+    font-size: 20px;
+    margin: 10px 0;
+    color: #333;
+}
+
+/* Effet de transformation sur le hover */
+#dessins .dessin-item:hover {
+    transform: scale(1.05);
+    /* Agrandissement de 5% au hover */
+}
+
+/* Suppression du soulignement et de la couleur par défaut de la balise <a> */
+#dessins .dessin-item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+/* Style de la section "Contact" */
+#contact {
+    padding: 60px 0;
+    text-align: center;
+    background-color: #f7f7f7;
+}
+
+/* Style du titre de la section */
+.section-title {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Style de la section d'informations de contact */
+.contact-info {
+    max-width: 400px;
+    margin: 0 auto;
+    font-size: 18px;
+    color: #555;
+}
+
+.contact-info p {
+    margin: 10px 0;
+}
+
+.contact-info a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Style des icônes de réseaux sociaux */
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icon {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.social-icon img {
+    width: 40px;
+    /* Ajustez la taille des icônes selon vos besoins */
+    height: 40px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.social-icon img:hover {
+    transform: scale(1.1);
+    /* Agrandissement de l'icône au survol */
+}
+
+
+
+
+footer{
+    background-color: #f7f7f7; 
+    color: #000;
+    padding: 35px 0;
+    text-align: center;
+}

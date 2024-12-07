@@ -1,0 +1,21 @@
+{
+    "titre": "Modélisation d’une coque pour voiture",
+    "date": "2021",
+    "sous_titre": "",
+    "feat": "Projet réalisé avec Aurore Garcin étudiante en design d’objet",
+    "img": "1.jpg",
+    "desc": [
+        "Le but du projet était de modéliser une coque permettant de faire du foot avec des petits robots programmable télécommandé. Les contraintes était de faire en sorte de pouvoir orienter le ballon ( avec des bras sur les coté par exemple).",
+        "Nous avons décidé de prendre pour inspiration première les tracteurs de Cars car les grandes roues du robot nous on directement fait penser à cela. Puis nous avons décidé de rester sur les tracteurs plus globalement.",
+        "Pour commencer nous avons commencé par prendre toutes les cotes du robot puis à l’aide du logiciel Rhino 7 nous avons modéliser notre coque.",
+        "%2.png%3.png%",
+        "Après nous avons fait quelques rendus 3d",
+        "%5.png%6.png%",
+        "Puis nous l’avons imprimer avec une imprimante 3D.",
+        "%7.jpg%",
+        "%8.jpg%",
+        "%9.jpg%",
+        "%10.jpg%",
+        "%11.jpg%"
+    ]
+}

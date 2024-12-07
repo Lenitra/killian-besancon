@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio de Designer d'Objets</title>
+    <link rel="stylesheet" href="../../static/css/projet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<header>
+    <div class="header-content">
+        <a href="../../"><i class="fa fa-arrow-left"></i></a>
+        <h1>{{data['titre']}}</h1>
+        <h3>{{data['sous_titre']}}</h3>
+        <p class="date">{{data['date']}}</p>
+        <p class="feat">{{data['feat']}}</p>
+    </div>
+</header>
+
+
+
+    <main>
+        {{content | safe}}
+    </main>
+</body>
+
+</html>

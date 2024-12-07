@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio de Designer d'Objets</title>
+    <link rel="stylesheet" href="../static/css/test.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+
+    <header class="main-header">
+        <h1>Killian Besançon</h1>
+    </header>
+
+    <section id="about">
+        <h2 class="section-title">À Propos de Moi</h2>
+        <div class="about-content">
+            <p>Actuellement en troisième année de dn made objet au lycée Gabriel d’Argentan, licence dans le design et les métiers d’art dans le domaine de l’objet.</p>
+            <br>
+            <p>Je suis passionné d’art depuis mon enfance et j’aspire à devenir professeur d’arts plastiques au collège afin de transmettre cette passion.</p>
+        </div>
+        <div class="download-cv">
+            <a href="../static/Killian_Besancon_CV.pdf" download="Killian_Besancon_CV.pdf" class="btn-download">Télécharger mon CV</a>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <section id="portfolio">
+        <div class="slider-title">
+            <h2 class="section-title">Portfolio</h2>
+            <div class="slider-nav">
+                <button class="prev-button">&#8249;</button>
+                <span class="slider-count"></span>
+                <button class="next-button">&#8250;</button>
+            </div>
+            <br>
+            <h3 id="catname"></h3>
+        </div>
+        <div class="portfolio-slider">
+                {{projets|safe}}
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+<!-- Script SLIDER -->
+<script>
+    setcatname();
+    document.addEventListener("DOMContentLoaded", function () {
+        const groups = document.querySelectorAll(".portfolio-group");
+        let currentIndex = 0;
+        
+        const showGroup = (index) => {
+            groups.forEach((group, i) => {
+                group.style.display = i === index ? "flex" : "none";
+            });
+            updateSliderCount(index + 1, groups.length);
+            setcatname();
+        };
+
+        const updateSliderCount = (current, total) => {
+            const countElement = document.querySelector(".slider-count");
+            countElement.textContent = `${current}/${total}`;
+        };
+
+        const nextGroup = () => {
+            currentIndex = (currentIndex + 1) % groups.length;
+            showGroup(currentIndex);
+            setcatname();
+        };
+
+        const prevGroup = () => {
+            currentIndex = (currentIndex - 1 + groups.length) % groups.length;
+            showGroup(currentIndex);
+            setcatname();
+        };
+
+        const prevButton = document.querySelector(".prev-button");
+        const nextButton = document.querySelector(".next-button");
+
+        prevButton.addEventListener("click", prevGroup);
+        nextButton.addEventListener("click", nextGroup);
+
+        // Afficher le premier groupe au chargement de la page
+        showGroup(currentIndex);
+    });
+
+    function setcatname() {        
+        const catlist = document.querySelectorAll(".portfolio-group");
+        let categoriname = "";
+        // loop through all the elements and if the element has the class "active" then display its content (for testing)
+        for (var i = 0; i < catlist.length; i++) {
+            if (catlist[i].style.display == "flex") {
+                categoriname = catlist[i].getAttribute("catname");
+                console.log(categoriname);
+            }
+        }
+
+        const catnameElement = document.querySelector("#catname");
+        catnameElement.textContent = categoriname;
+    }
+
+    // Script pour afficher le nom de la catégorie
+    // get the category name from the parameter catname from the div.portfolio-group
+</script>
+
+
+
+<hr>
+
+<section id="plastiques">
+    <div class="slider-title">
+        <h2 class="section-title">Recherches Plastiques</h2>
+        <br>
+    </div>
+    <div class="plastiques-group">
+            {{plastiques|safe}}
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- Liste des icones https://fontawesome.com/v4/icons/ -->
+
+<section id="dessins">
+    <h2 class="section-title">Dessins</h2>
+    <div class="dessins-container">
+
+        <div class="dessin-item">
+            <a href="/draws/Observation">
+                <i class="fa fa-eye"></i>
+                <h3>Observation</h3>
+            </a>
+        </div>
+
+        <div class="dessin-item">
+            <a href="/draws/Personnels">
+                <i class="fa fa-user"></i>
+                <h3>Personnels</h3>
+            </a>
+        </div>
+
+        <div class="dessin-item">
+            <a href="/draws/Inktober">
+                <i class="fa fa-calendar"></i>
+                <h3>Inktober</h3>
+            </a>
+        </div>
+
+        <div class="dessin-item">
+            <a href="/draws/Croquis">
+                <i class="fa fa-pencil"></i>
+                <h3>Croquis rapides</h3>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <div class="contact-info">
+        <p>Adresse e-mail : <a href="mailto:contact@killianbesancon.com">killianbesancon@gmail.com</a></p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/people/KillianBesan%C3%A7on_Portfolio/100089451543717/" target="_blank" class="social-icon"><img src="../static/imgs/icons/facebook.png" alt="Facebook"></a>
+            <a href="https://www.tumblr.com/killian-besancon" target="_blank" class="social-icon"><img src="../static/imgs/icons/tumblr.png" alt="Tumblr"></a>
+            <a href="https://www.instagram.com/portfolio.killian/" target="_blank" class="social-icon"><img src="../static/imgs/icons/instagram.png" alt="Instagram"></a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; <span id="year"></span> Killian Besançon. Tous droits réservés. | Créé par <a href="thomas.lemartinel.com" target="_blank">TauMah</a></p>
+</footer>
+
+<script>
+    const yearElement = document.querySelector("#year");
+    yearElement.textContent = new Date().getFullYear();
+</script>
+
+
+</body>
+
+</html>

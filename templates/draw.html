@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio de Designer d'Objets</title>
+    <link rel="stylesheet" href="../../static/css/projet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <style>
+        /* styles.css */
+        main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        }
+
+        .draw {
+        flex-basis: calc(33.33% - 20px); /* Pour que chaque div occupe environ 33.33% de la largeur de l'écran avec un espace de 20px entre elles */
+        margin-bottom: 20px;
+        text-align: center;
+        }
+
+        .draw img {
+        max-width: 100%;
+        height: auto;
+        }
+
+        .draw p {
+        margin: 0;
+        padding: 10px;
+        background-color: #f0f0f0;
+        }
+    </style>
+<header>
+    <div class="header-content">
+        <a href="../../"><i class="fa fa-arrow-left"></i></a>
+        <h1>{{cat}}</h1>
+    </div>
+</header>
+
+
+
+    <main>
+        {{content | safe}}
+    </main>
+</body>
+
+</html>
